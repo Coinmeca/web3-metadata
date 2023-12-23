@@ -1,0 +1,16 @@
+{
+    "id": 1,
+    "name": "Ethereum",
+    "rpc": [
+        "wss://mainnet.gateway.tenderly.co",
+        "https://ethereum.publicnode.com",
+        "https://virginia.rpc.blxrbdn.com",
+        "https://uk.rpc.blxrbdn.com",
+        "https://singapore.rpc.blxrbdn.com",
+        "https://rpc.ankr.com/eth",
+        "https://mainnet.gateway.tenderly.co",
+        "https://gateway.tenderly.co/public/mainnet",
+        "https://1rpc.io/eth",
+        "https://endpoints.omniatech.io/v1/eth/mainnet/public"
+    ]
+}

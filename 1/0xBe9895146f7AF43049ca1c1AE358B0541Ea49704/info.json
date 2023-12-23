@@ -1,0 +1,8 @@
+{
+    "address": "0xBe9895146f7AF43049ca1c1AE358B0541Ea49704",
+    "symbol": "cbETH",
+    "name": "Coinbase Wrapped Staked ETH",
+    "decimals": 18,
+    "tags": [],
+    "extensions": {}
+}

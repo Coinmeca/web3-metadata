@@ -1,0 +1,5 @@
+{
+    "id": 421614,
+    "name": "Arbitrum Sepolia",
+    "rpc": ["https://sepolia-rollup.arbitrum.io/rpc", "https://arbitrum-sepolia.blockpi.network/v1/rpc/public"]
+}
