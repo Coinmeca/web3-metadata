@@ -1,0 +1,16 @@
+{
+  "address": "0x9325C0D1d51B8e4a2bFc939F59A8f03dc49ba0E4",
+  "symbol": "MECA",
+  "name": "Coinmeca",
+  "decimals": 18,
+  "logoURI": "https://firebasestorage.googleapis.com/v0/b/coinmeca-3e733.appspot.com/o/Coinmeca.svg?alt=media&token=4ef710cb-df4c-47aa-9614-c867153db029",
+  "tags": [
+    "utility-token"
+  ],
+  "extensions": {
+    "website": "https://coinmeca.net/",
+    "medium": "https://coinmeca.medium.com/",
+    "twitter": "https://twitter.com/coinmeca",
+    "telegram": "https://t.me/coinmeca"
+  }
+},
