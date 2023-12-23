@@ -1,0 +1,20 @@
+{
+    "id": 8453,
+    "name": "Base",
+    "rpc": [
+        "wss://base.publicnode.com",
+        "wss://base.gateway.tenderly.co",
+        "https://base.llamarpc.com",
+        "https://base-pokt.nodies.app",
+        "https://base.blockpi.network/v1/rpc/public",
+        "https://base.gateway.tenderly.co",
+        "https://gateway.tenderly.co/public/base",
+        "https://base-mainnet.public.blastapi.io",
+        "https://rpc.notadegen.com/base",
+        "https://base.publicnode.com",
+        "https://endpoints.omniatech.io/v1/base/mainnet/public",
+        "https://developer-access-mainnet.base.org",
+        "https://mainnet.base.org",
+        "https://base.meowrpc.com"
+    ]
+}

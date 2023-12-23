@@ -1,0 +1,18 @@
+{
+    "id": 43114,
+    "name": "Avalanche C Chain",
+    "rpc": [
+        "wss://avalanche-c-chain.publicnode.com",
+        "https://avalanche.public-rpc.com",
+        "https://rpc.ankr.com/avalanche",
+        "https://avalanche.blockpi.network/v1/rpc/public",
+        "https://api.avax.network/ext/bc/C/rpc",
+        "https://endpoints.omniatech.io/v1/avax/mainnet/public",
+        "https://avax-pokt.nodies.app/ext/bc/C/rpc",
+        "https://ava-mainnet.public.blastapi.io/ext/bc/C/rpc",
+        "https://1rpc.io/avax/c",
+        "https://avalanche-c-chain.publicnode.com",
+        "https://avax.meowrpc.com",
+        "https://avalanche.api.onfinality.io/public/ext/bc/C/rpc"
+    ]
+}
