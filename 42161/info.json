@@ -1,0 +1,10 @@
+{
+    "id": 421614,
+    "name": "Arbitrum One",
+    "rpc": [
+        "wss://arbitrum-one.publicnode.com",
+        "https://rpc.arb1.arbitrum.gateway.fm",
+        "https://endpoints.omniatech.io/v1/arbitrum/one/public",
+        "https://arbitrum-one.public.blastapi.io"
+    ]
+}
