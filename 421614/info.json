@@ -1,5 +1,5 @@
 {
-    "id": 421614,
-    "name": "Arbitrum Sepolia",
+    "id": 421613,
+    "name": "Arbitrum Goerli",
     "rpc": ["https://sepolia-rollup.arbitrum.io/rpc", "https://arbitrum-sepolia.blockpi.network/v1/rpc/public"]
 }

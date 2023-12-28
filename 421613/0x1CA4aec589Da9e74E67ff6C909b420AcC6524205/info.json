@@ -1,0 +1,8 @@
+{
+    "address": "0x1CA4aec589Da9e74E67ff6C909b420AcC6524205",
+    "symbol": "USDT",
+    "name": "USD Tether",
+    "decimals": 6,
+    "tags": ["stable"],
+    "extensions": {}
+}

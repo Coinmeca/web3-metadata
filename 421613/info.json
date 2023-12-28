@@ -1,0 +1,14 @@
+{
+    "id": 421613,
+    "name": "Arbitrum Goerli",
+    "rpc": [
+        "wss://arbitrum-goerli.publicnode.com",
+        "https://api.zan.top/node/v1/arb/goerli/public",
+        "https://goerli-rollup.arbitrum.io/rpc",
+        "https://arbitrum-goerli.blockpi.network/v1/rpc/public",
+        "https://rpc.goerli.arbitrum.gateway.fm",
+        "https://arbitrum-goerli.public.blastapi.io",
+        "https://arbitrum-goerli.publicnode.com",
+        "https://endpoints.omniatech.io/v1/arbitrum/goerli/public"
+    ]
+}
