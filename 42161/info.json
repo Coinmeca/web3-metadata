@@ -6,5 +6,9 @@
         "https://rpc.arb1.arbitrum.gateway.fm",
         "https://endpoints.omniatech.io/v1/arbitrum/one/public",
         "https://arbitrum-one.public.blastapi.io"
-    ]
+    ],
+    "nativeCurrency": {
+        "symbol": "ETH",
+        "decimals": 18
+    }
 }

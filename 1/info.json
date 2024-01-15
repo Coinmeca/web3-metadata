@@ -12,5 +12,9 @@
         "https://gateway.tenderly.co/public/mainnet",
         "https://1rpc.io/eth",
         "https://endpoints.omniatech.io/v1/eth/mainnet/public"
-    ]
+    ],
+    "nativeCurrency": {
+        "symbol": "ETH",
+        "decimals": 18
+    }
 }

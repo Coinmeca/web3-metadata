@@ -1,6 +1,6 @@
 {
     "id": 421613,
-    "name": "Arbitrum Goerli",
+    "name": "Arbitrum Goerli Testnet",
     "rpc": [
         "wss://arbitrum-goerli.publicnode.com",
         "https://api.zan.top/node/v1/arb/goerli/public",
@@ -10,5 +10,9 @@
         "https://arbitrum-goerli.public.blastapi.io",
         "https://arbitrum-goerli.publicnode.com",
         "https://endpoints.omniatech.io/v1/arbitrum/goerli/public"
-    ]
+    ],
+    "nativeCurrency": {
+        "symbol": "ETH",
+        "decimals": 18
+    }
 }

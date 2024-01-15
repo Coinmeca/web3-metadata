@@ -14,5 +14,9 @@
         "https://avalanche-c-chain.publicnode.com",
         "https://avax.meowrpc.com",
         "https://avalanche.api.onfinality.io/public/ext/bc/C/rpc"
-    ]
+    ],
+    "nativeCurrency": {
+        "symbol": "AVAX",
+        "decimals": 18
+    }
 }

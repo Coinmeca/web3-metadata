@@ -33,5 +33,9 @@
         "https://bsc-pokt.nodies.app",
         "https://bsc-dataseed2.ninicoin.io",
         "https://endpoints.omniatech.io/v1/bsc/mainnet/public"
-    ]
+    ],
+    "nativeCurrency": {
+        "symbol": "BNB",
+        "decimals": 18
+    }
 }

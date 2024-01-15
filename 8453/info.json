@@ -16,5 +16,9 @@
         "https://developer-access-mainnet.base.org",
         "https://mainnet.base.org",
         "https://base.meowrpc.com"
-    ]
+    ],
+    "nativeCurrency": {
+        "symbol": "ETH",
+        "decimals": 18
+    }
 }
