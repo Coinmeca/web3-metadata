@@ -1,6 +1,6 @@
 ﻿{
     "id": 10,
-    "name": "OP Mainnet",
+    "name": "Optimism",
     "rpc": [
         "https://optimism.llamarpc.com",
         "https://optimism.blockpi.network/v1/rpc/public",
