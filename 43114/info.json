@@ -1,6 +1,6 @@
 {
     "id": 43114,
-    "name": "Avalanche C Chain",
+    "name": "Avalanche C-Chain",
     "rpc": [
         "wss://avalanche-c-chain.publicnode.com",
         "https://avalanche.public-rpc.com",

@@ -1,6 +1,6 @@
 {
     "id": 421613,
-    "name": "Arbitrum Goerli Testnet",
+    "name": "Arbitrum Goerli",
     "rpc": [
         "wss://arbitrum-goerli.publicnode.com",
         "https://api.zan.top/node/v1/arb/goerli/public",
