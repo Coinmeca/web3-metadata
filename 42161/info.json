@@ -2,10 +2,10 @@
     "id": 42161,
     "name": "Arbitrum One",
     "rpc": [
-        "wss://arbitrum-one.publicnode.com",
         "https://rpc.arb1.arbitrum.gateway.fm",
         "https://endpoints.omniatech.io/v1/arbitrum/one/public",
-        "https://arbitrum-one.public.blastapi.io"
+        "https://arbitrum-one.public.blastapi.io",
+        "wss://arbitrum-one.publicnode.com"
     ],
     "nativeCurrency": {
         "symbol": "ETH",
