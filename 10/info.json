@@ -1,0 +1,27 @@
+﻿{
+    "id": 10,
+    "name": "OP Mainnet",
+    "rpc": [
+        "https://optimism.llamarpc.com",
+        "https://optimism.blockpi.network/v1/rpc/public",
+        "https://optimism.drpc.org",
+        "https://optimism-mainnet.public.blastapi.io",
+        "https://rpc.optimism.gateway.fm",
+        "https://mainnet.optimism.io",
+        "https://optimism.meowrpc.com",
+        "https://rpc.tornadoeth.cash/optimism",
+        "https://optimism-rpc.publicnode.com",
+        "https://rpc.ankr.com/optimism",
+        "https://op-pokt.nodies.app",
+        "https://api.zan.top/node/v1/opt/mainnet/public",
+        "https://optimism.gateway.tenderly.co",
+        "https://gateway.tenderly.co/public/optimism",
+        "https://endpoints.omniatech.io/v1/op/mainnet/public",
+        "wss://optimism-rpc.publicnode.com",
+        "wss://optimism.gateway.tenderly.co"
+    ],
+    "nativeCurrency": {
+        "symbol": "ETH",
+        "decimals": 18
+    }
+}
