@@ -1,5 +1,6 @@
 ﻿{
     "id": 80085,
+    "base": "evm",
     "name": "Berachain Artio",
     "rpc": ["https://artio.rpc.berachain.com/"],
     "explorer": ["https://artio.beratrail.io/"],

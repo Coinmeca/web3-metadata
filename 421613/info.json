@@ -1,5 +1,6 @@
 {
     "id": 421613,
+    "base": "evm",
     "name": "Arbitrum Goerli",
     "rpc": [
         "https://api.zan.top/node/v1/arb/goerli/public",

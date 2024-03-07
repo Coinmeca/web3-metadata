@@ -1,5 +1,6 @@
 {
     "id": 8453,
+    "base": "evm",
     "name": "Base",
     "rpc": [
         "wss://base.publicnode.com",

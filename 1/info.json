@@ -1,5 +1,6 @@
 {
     "id": 1,
+    "base": "evm",
     "name": "Ethereum",
     "rpc": [
         "https://mainnet.infura.io/v3/",

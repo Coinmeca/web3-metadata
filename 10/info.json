@@ -1,5 +1,6 @@
 ﻿{
     "id": 10,
+    "base": "evm",
     "name": "Optimism",
     "rpc": [
         "https://optimism-mainnet.infura.io",
