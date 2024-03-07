@@ -2,7 +2,7 @@
     "id": 43114,
     "name": "Avalanche C-Chain",
     "rpc": [
-        "wss://avalanche-c-chain.publicnode.com",
+        "https://avalanche-mainnet.infura.io",
         "https://avalanche.public-rpc.com",
         "https://rpc.ankr.com/avalanche",
         "https://avalanche.blockpi.network/v1/rpc/public",
@@ -13,7 +13,8 @@
         "https://1rpc.io/avax/c",
         "https://avalanche-c-chain.publicnode.com",
         "https://avax.meowrpc.com",
-        "https://avalanche.api.onfinality.io/public/ext/bc/C/rpc"
+        "https://avalanche.api.onfinality.io/public/ext/bc/C/rpc",
+        "wss://avalanche-c-chain.publicnode.com"
     ],
     "nativeCurrency": {
         "symbol": "AVAX",

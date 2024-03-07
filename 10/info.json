@@ -2,6 +2,7 @@
     "id": 10,
     "name": "Optimism",
     "rpc": [
+        "https://optimism-mainnet.infura.io",
         "https://optimism.llamarpc.com",
         "https://optimism.blockpi.network/v1/rpc/public",
         "https://optimism.drpc.org",

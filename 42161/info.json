@@ -2,6 +2,7 @@
     "id": 42161,
     "name": "Arbitrum One",
     "rpc": [
+        "https://arbitrum-mainnet.infura.io",
         "https://rpc.arb1.arbitrum.gateway.fm",
         "https://endpoints.omniatech.io/v1/arbitrum/one/public",
         "https://arbitrum-one.public.blastapi.io",

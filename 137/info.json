@@ -2,6 +2,7 @@
     "id": 137,
     "name": "Polygon",
     "rpc": [
+        "https://polygon-mainnet.infura.io",
         "https://polygon-rpc.com",
         "https://polygon-pokt.nodies.app",
         "https://rpc.ankr.com/polygon",
