@@ -1,0 +1,31 @@
+name: Diff
+on: [pull_request]
+jobs:
+  diff:
+    name: Diff
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3.4.1
+        with:
+          node-version: 16
+      - run: npm install @octokit/action
+      - name: Get diff
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          node -e "(async () => {
+            const { Octokit } = require('@octokit/action');
+            const octokit = new Octokit();
+            const [owner, repo] = process.env.GITHUB_REPOSITORY.split('/');
+            const pull_number = process.env.GITHUB_REF.split('/')[2];
+            const result = await octokit.rest.pulls.get({
+              owner: owner,
+              repo: repo,
+              pull_number: pull_number,
+              mediaType: {
+                format: 'diff',
+              },
+            });
+            console.log(result.data)
+          })();"
