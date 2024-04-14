@@ -1,5 +1,5 @@
 name: Diff
-on: [push, pull_request]
+on: [pull_request]
 jobs:
   diff:
     name: Diff
@@ -13,7 +13,7 @@ jobs:
       - name: Get diff
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run:
+        run: |
           node -e "(async () => {
             const { Octokit } = require('@octokit/action');
             const octokit = new Octokit();
