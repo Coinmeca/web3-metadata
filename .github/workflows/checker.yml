@@ -13,8 +13,8 @@ jobs:
       - name: Get diff
         env:
           GITHUB_TOKEN: ${{ github.token }}
-        run: |
-          node -e "(async () => {
+        with:
+          script: |
             const { Octokit } = require('@octokit/action');
             const octokit = new Octokit();
             const [owner, repo] = process.env.GITHUB_REPOSITORY.split('/');
@@ -27,5 +27,4 @@ jobs:
                 format: 'diff',
               },
             });
-            console.log(result.data)
-          })();"
+            console.log(result.data);
