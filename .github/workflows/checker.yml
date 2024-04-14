@@ -12,9 +12,9 @@ jobs:
       - run: npm install @octokit/action
       - name: Get diff
         env:
-          GITHUB_TOKEN: ${{ github.token }}
-        with:
-          script: |
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run:
+          node -e "(async () => {
             const { Octokit } = require('@octokit/action');
             const octokit = new Octokit();
             const [owner, repo] = process.env.GITHUB_REPOSITORY.split('/');
@@ -27,4 +27,5 @@ jobs:
                 format: 'diff',
               },
             });
-            console.log(result.data);
+            console.log(result.data)
+          })();"
