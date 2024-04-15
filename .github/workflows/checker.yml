@@ -18,8 +18,12 @@ jobs:
       - name: Fetch pull request changes
         run: git fetch origin pull/${{ github.event.pull_request.number }}/head:pr_branch
       
+      - name: Get PR branch name
+        id: pr_branch_name
+        run: echo "::set-output name=branch_name::$(git rev-parse --abbrev-ref pr_branch)"
+      
       - name: Diff changes
-        run: git diff origin/main...origin/pr_branch -- diff_output.txt
+        run: git diff main...$PR_BRANCH_NAME -- > diff_output.txt
       
       - name: Identify deleted lines
         run: grep '^-' diff_output.txt > deleted_lines.txt
@@ -27,9 +31,9 @@ jobs:
       - name: Check if deleted lines were created by same contributor
         run: |
           while IFS= read -r line; do
-            original_commit=$(git blame -L "/$line/" origin/main -- "$file" | cut -d ' ' -f 1 | head -n 1)
+            original_commit=$(git blame -L "/$line/" main -- "$file" | cut -d ' ' -f 1 | head -n 1)
             original_author=$(git show -s --format='%an' $original_commit)
-            deleting_author=$(git show -s --format='%an' pr_branch)
+            deleting_author=$(git show -s --format='%an' $PR_BRANCH_NAME)
             if [ "$original_author" != "$deleting_author" ]; then
               echo "Deleted line '$line' was originally created by a different contributor"
               exit 1  # Fail the workflow
