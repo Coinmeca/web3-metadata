@@ -19,7 +19,7 @@ jobs:
         run: git fetch origin pull/${{ github.event.pull_request.number }}/head:pr_branch
       
       - name: Diff changes
-        run: git diff origin/main...origin/pr_branch -- > diff_output.txt
+        run: git diff origin/main...origin/pr_branch > diff_output.txt
       
       - name: Identify deleted lines
         run: grep '^-' diff_output.txt > deleted_lines.txt
