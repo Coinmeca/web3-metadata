@@ -1,41 +1,112 @@
-name: Check Deleted Lines and Contributors
+name: Validate Contributions and Ownership
 
 on:
-  pull_request:
-    types: [opened, synchronize]
+    pull_request:
+        types: [opened, synchronize]
 
 jobs:
-  check_deleted_lines_and_contributors:
-    runs-on: ubuntu-latest
-    
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-      
-      - name: Fetch main branch changes
-        run: git fetch origin main
-      
-      - name: Fetch pull request changes
-        run: git fetch origin pull/${{ github.event.pull_request.number }}/head:pr_branch
-      
-      - name: Get PR branch name
-        id: pr_branch_name
-        run: echo "::set-output name=branch_name::$(git rev-parse --abbrev-ref pr_branch)"
-      
-      - name: Diff changes
-        run: git diff origin/main...$PR_BRANCH_NAME -- > diff_output.txt
-      
-      - name: Identify deleted lines
-        run: grep '^-' diff_output.txt > deleted_lines.txt
-      
-      - name: Check if deleted lines were created by same contributor
-        run: |
-          while IFS= read -r line; do
-            original_commit=$(git blame -L "/$line/" main -- "$file" | cut -d ' ' -f 1 | head -n 1)
-            original_author=$(git show -s --format='%an' $original_commit)
-            deleting_author=$(git show -s --format='%an' $PR_BRANCH_NAME)
-            if [ "$original_author" != "$deleting_author" ]; then
-              echo "Deleted line '$line' was originally created by a different contributor"
-              exit 1  # Fail the workflow
-            fi
-          done < deleted_lines.txt
+    validate:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v2
+
+            - name: Fetch main branch changes
+              run: git fetch origin main
+
+            - name: Fetch pull request changes
+              run: git fetch origin pull/${{ github.event.pull_request.number }}/head:pr_branch
+
+            - name: Get PR branch name
+              id: pr_branch_name
+              run: echo "::set-output name=branch_name::$(git rev-parse --abbrev-ref pr_branch)"
+
+            - name: Diff changes
+              run: git diff origin/main...$PR_BRANCH_NAME -- > diff_output.txt
+
+            - name: Identify deleted lines
+              run: grep '^-' diff_output.txt > deleted_lines.txt
+
+            - name: Check deleted lines attribution
+              run: |
+                  while IFS= read -r line; do
+                    # Get the original commit and author of the deleted line
+                    original_commit=$(git blame -L "/$line/" main -- "$file" | cut -d ' ' -f 1 | head -n 1)
+                    original_author=$(git show -s --format='%an' $original_commit)
+                    
+                    # Get the current pull request author
+                    deleting_author=$(git show -s --format='%an' $PR_BRANCH_NAME)
+                    
+                    # Compare authors
+                    if [ "$original_author" != "$deleting_author" ]; then
+                      echo "Deleted line '$line' was originally created by a different contributor"
+                      exit 1  # Fail the workflow
+                    fi
+                  done < deleted_lines.txt
+
+            - name: Validate folder structure and files
+              run: |
+                  CHAIN_ID_REGEX='^[0-9]+$'
+                  TOKEN_ADDRESS_REGEX='^0x[a-fA-F0-9]{40}$'
+
+                  # Get the pull request author
+                  PR_AUTHOR=$(jq -r '.pull_request.user.login' "$GITHUB_EVENT_PATH")
+
+                  # Validate each changed file
+                  for file in $(git diff --name-only origin/main); do
+                    IFS='/' read -r -a path_parts <<< "$file"
+
+                    # Check the structure
+                    if [[ ${#path_parts[@]} -lt 2 ]]; then
+                      echo "Invalid path structure: $file"
+                      exit 1
+                    fi
+
+                    # Validate chain ID folder
+                    if ! [[ ${path_parts[0]} =~ $CHAIN_ID_REGEX ]]; then
+                      echo "Invalid chain ID folder: ${path_parts[0]}"
+                      exit 1
+                    fi
+
+                    # Validate token address folder
+                    if ! [[ ${path_parts[1]} =~ $TOKEN_ADDRESS_REGEX ]]; then
+                      echo "Invalid token address folder: ${path_parts[1]}"
+                      exit 1
+                    fi
+
+                    # Check required files
+                    if [[ ${#path_parts[@]} -eq 3 ]]; then
+                      case "${path_parts[2]}" in
+                        info.json)
+                          if ! jq empty "$file"; then
+                            echo "Invalid JSON format: $file"
+                            exit 1
+                          fi
+                          ;;
+                        logo.png|logo.jpg|logo.jpeg|logo.svg)
+                          if ! file "$file" | grep -qE 'image|SVG'; then
+                            echo "Invalid logo file: $file"
+                            exit 1
+                          fi
+                          ;;
+                        *)
+                          echo "Unexpected file: ${path_parts[2]}"
+                          exit 1
+                          ;;
+                      esac
+                    fi
+
+                    # Check file history
+                    if git log --pretty=format:"%an" "$file" | grep -v "$PR_AUTHOR" > /dev/null; then
+                      echo "Unauthorized change by $PR_AUTHOR to file: $file"
+                      exit 1
+                    fi
+                  done
+
+            - name: Auto-merge PR
+              if: success()
+              uses: peter-evans/merge-pull-request@v2
+              with:
+                  token: ${{ secrets.GITHUB_TOKEN }}
+                  merge-method: squash
