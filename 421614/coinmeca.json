@@ -1,0 +1,14 @@
+﻿{
+    "credit": "0xD098dbd046f5eC2F454a40dcf7110a295355302e",
+    "app": "0x705BB81d725760022c0019aA810869c490761a48",
+    "tokens": {
+        "meca": "0xB60413F1f056840528b729000d8D94dFCb5359f1"
+    },
+    "reserve": "0x888e45a52512E92563c1D818Ab79488a3F9de4e9",
+    "vault": "0xbf6a90Fc525e5D2592948324438b079A55d4F9f4",
+    "farm": {
+        "base": "0x678023F8D81a99715e218bA559a9015047B87768",
+        "main": "0x6510b8f99C8855Dbb05016a9f828861b3f3Dcb6A"
+    },
+    "exchange": "0xDfA350FcF7939C74aE50772256712fcc01dd6275"
+}
