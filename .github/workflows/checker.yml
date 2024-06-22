@@ -23,7 +23,7 @@ jobs:
               run: echo "::set-output name=branch_name::$(git rev-parse --abbrev-ref pr_branch)"
 
             - name: Diff changes
-              run: git diff origin/main...$PR_BRANCH_NAME -- > diff_output.txt
+              run: git diff origin/main...${{ steps.pr_branch_name.outputs.branch_name }} -- > diff_output.txt
 
             - name: Identify deleted lines
               run: grep '^-' diff_output.txt > deleted_lines.txt
@@ -32,11 +32,11 @@ jobs:
               run: |
                   while IFS= read -r line; do
                     # Get the original commit and author of the deleted line
-                    original_commit=$(git blame -L "/$line/" main -- "$file" | cut -d ' ' -f 1 | head -n 1)
+                    original_commit=$(git blame -L "/$line/" origin/main -- "$file" | cut -d ' ' -f 1 | head -n 1)
                     original_author=$(git show -s --format='%an' $original_commit)
                     
                     # Get the current pull request author
-                    deleting_author=$(git show -s --format='%an' $PR_BRANCH_NAME)
+                    deleting_author=$(git show -s --format='%an' HEAD)
                     
                     # Compare authors
                     if [ "$original_author" != "$deleting_author" ]; then
@@ -54,7 +54,7 @@ jobs:
                   PR_AUTHOR=$(jq -r '.pull_request.user.login' "$GITHUB_EVENT_PATH")
 
                   # Validate each changed file
-                  for file in $(git diff --name-only origin/main); do
+                  for file in $(git diff --name-only origin/main...${{ steps.pr_branch_name.outputs.branch_name }}); do
                     IFS='/' read -r -a path_parts <<< "$file"
 
                     # Check the structure
