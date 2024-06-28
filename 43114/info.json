@@ -1,6 +1,7 @@
 {
     "id": 43114,
     "base": "evm",
+    "type": "mainnet",
     "name": "Avalanche C-Chain",
     "rpc": [
         "https://avalanche-mainnet.infura.io",

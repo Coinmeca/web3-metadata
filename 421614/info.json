@@ -1,9 +1,15 @@
 {
     "id": 421614,
     "base": "evm",
+    "type": "testnet",
     "name": "Arbitrum Sepolia",
-    "rpc": ["https://sepolia-rollup.arbitrum.io/rpc", "https://arbitrum-sepolia.blockpi.network/v1/rpc/public"],
-    "explorer": ["https://sepolia.arbiscan.io/"],
+    "rpc": [
+        "https://sepolia-rollup.arbitrum.io/rpc",
+        "https://arbitrum-sepolia.blockpi.network/v1/rpc/public"
+    ],
+    "explorer": [
+        "https://sepolia.arbiscan.io/"
+    ],
     "nativeCurrency": {
         "symbol": "ETH",
         "decimals": 18

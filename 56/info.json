@@ -1,6 +1,7 @@
 {
     "id": 137,
     "base": "evm",
+    "type": "mainnet",
     "name": "BNB Smart Chain",
     "rpc": [
         "https://bsc-dataseed.binance.org/",

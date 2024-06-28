@@ -1,6 +1,7 @@
 {
     "id": 137,
     "base": "evm",
+    "type": "mainnet",
     "name": "Polygon",
     "rpc": [
         "https://polygon-mainnet.infura.io",

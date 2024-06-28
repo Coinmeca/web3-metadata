@@ -1,9 +1,14 @@
 ﻿{
     "id": 80085,
     "base": "evm",
+    "type": "testnet",
     "name": "Berachain Artio",
-    "rpc": ["https://artio.rpc.berachain.com/"],
-    "explorer": ["https://artio.beratrail.io/"],
+    "rpc": [
+        "https://artio.rpc.berachain.com/"
+    ],
+    "explorer": [
+        "https://artio.beratrail.io/"
+    ],
     "nativeCurrency": {
         "symbol": "BERA",
         "decimals": 18

@@ -1,6 +1,7 @@
 {
     "id": 42161,
     "base": "evm",
+    "type": "mainnet",
     "name": "Arbitrum One",
     "rpc": [
         "https://arbitrum-mainnet.infura.io",
