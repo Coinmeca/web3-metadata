@@ -4,12 +4,13 @@
     "tokens": {
         "meca": "0xB60413F1f056840528b729000d8D94dFCb5359f1",
         "mocks": {
+            "dai": "0x72f3a98170e961e310946BEA60B0B23Ad912d969",
             "usdt": "0xd42b5E48D0e2C265A87adF7E08d2fCd9c62ff17B",
+            "usdc": "0x709c5856d329748344789c787a429b3cc7631894",
             "matic": "0x0f646C4385d0609fA7A75888B48D877402B1B1fF",
             "wbtc": "0xB0dC252702809dB49eda2B0F2F58A1708ca3E0D1",
             "weth": "0x988e74baa0f8c7a7ca2767725dc19f20ff5d2eef",
-            "wsol": "0xd06bd4588621FFa20B6a21E652B912E227f0b131",
-            "dai": "0x72f3a98170e961e310946BEA60B0B23Ad912d969"
+            "wsol": "0xd06bd4588621FFa20B6a21E652B912E227f0b131"
         }
     },
     "reserve": "0x888e45a52512E92563c1D818Ab79488a3F9de4e9",
