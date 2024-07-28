@@ -1,0 +1,8 @@
+{
+    "address": "0x0000000000000000000000000000000000000000",
+    "symbol": "ETH",
+    "name": "Ethereum",
+    "decimals": 18,
+    "tags": ["payments"],
+    "extensions": { "website": "https://ethereum.org" }
+}
